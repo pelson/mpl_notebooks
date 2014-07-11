@@ -22,11 +22,7 @@ Add the original title and keywords from the original example in the format show
   "signature": "sha256:52b3805edbda44d709560e8f109b2ec3c4db13121a76531da79e7a0f4e3701ff",
   "title": "images_contours_and_fields example code: image_demo.py",
   "keywords": [
-    "python",
-    "matplotlib",
-    "pylab",
-    "example",
-    "codex"
-  ]
+    "colors",
+    "colormaps"
 }
 ```
