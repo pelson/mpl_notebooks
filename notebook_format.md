@@ -7,7 +7,7 @@ For example, if the full title of the example is `images_contours_and_fields exa
 Place the code from the original example into code cells in notebook, separate the cells where it is needed and/or make sense in the context of the example.
 
 ##Metadata
-The metadata of the notebook can be edited by clicking ‘Edit Notebook Metadata’ in the Edit Menu. At first, the metadata will look something like this:
+The metadata of the notebook can be edited by clicking ‘Edit Notebook Metadata’ in the Edit Menu. By default, the metadata will look something like this:
 ```json
 {
   "name": "",
@@ -15,6 +15,7 @@ The metadata of the notebook can be edited by clicking ‘Edit Notebook Metadata
 }
 ```
 Add the original title and keywords from the original example in the format shown below. Make sure to add a comma at the end of the signature line, which will likely be cut off due to its length.
+**For many of the examples in the gallery, the keywords are not very specific, so feel free to add more specific keywords, such as `image`, or `scatter`.
 ```json
 {
   "name": "",
