@@ -8,30 +8,24 @@ Place the code from the original example into code cells in notebook, separate t
 
 ##Metadata
 The metadata of the notebook can be edited by clicking ‘Edit Notebook Metadata’ in the Edit Menu. At first, the metadata will look something like this:
-```
-1
+```json
 {
-2
   "name": "",
-3
-  "signature": "sha256:52b3805edbda44d709560e8f109b2ec3c4db13121a76531da79e7a0f4e3701ff",
-4
-  "title": "images_contours_and_fields example code: image_demo.py",
-5
-  "keywords": [
-6
-    "python",
-7
-    "matplotlib",
-8
-    "pylab",
-9
-    "example",
-10
-    "codex"
-11
-  ]
-12
+  "signature": "sha256:52b3805edbda44d709560e8f109b2ec3c4db13121a76531da79e7a0f4e3701ff"
 }
 ```
-
+Add the original title and keywords from the original example in the format shown below. Make sure to add a comma at the end of the signature line, which will likely be cut off due to its length.
+```json
+{
+  "name": "",
+  "signature": "sha256:52b3805edbda44d709560e8f109b2ec3c4db13121a76531da79e7a0f4e3701ff",
+  "title": "images_contours_and_fields example code: image_demo.py",
+  "keywords": [
+    "python",
+    "matplotlib",
+    "pylab",
+    "example",
+    "codex"
+  ]
+}
+```
