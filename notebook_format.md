@@ -15,7 +15,7 @@ The metadata of the notebook can be edited by clicking ‘Edit Notebook Metadata
 }
 ```
 Add the original title and keywords from the original example in the format shown below. Make sure to add a comma at the end of the signature line, which will likely be cut off due to its length.
-**For many of the examples in the gallery, the keywords are not very specific, so feel free to add more specific keywords, such as `image`, or `scatter`.**
+**Every example in the gallery (at least as far as I have looked) has the exact same set of keywords:"python, matplotlib, pylab, example, codex". Because of this, rather than including those keywords, just add keywords that make sense in the context of the example, such as `image` or `scatter`**
 ```json
 {
   "name": "",
