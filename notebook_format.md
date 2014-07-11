@@ -15,7 +15,7 @@ The metadata of the notebook can be edited by clicking ‘Edit Notebook Metadata
 }
 ```
 Add the original title and keywords from the original example in the format shown below. Make sure to add a comma at the end of the signature line, which will likely be cut off due to its length.
-**For many of the examples in the gallery, the keywords are not very specific, so feel free to add more specific keywords, such as `image`, or `scatter`.
+**For many of the examples in the gallery, the keywords are not very specific, so feel free to add more specific keywords, such as `image`, or `scatter`.**
 ```json
 {
   "name": "",
