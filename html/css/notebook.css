@@ -1,0 +1,51 @@
+/* Base Styles */
+
+html, body, .gallery{
+    height: 100%;
+    font-family: "Vollkorn";
+}
+
+nav{
+    height: 60px;
+    background: #3498db;
+    position: fixed;    
+    width: 100%;
+    z-index: 1;
+}
+
+nav p{
+    margin: 0;
+    text-align: left;
+    color: white;
+    font-size: 23px;
+    line-height: 60px;
+    padding-left: 20px;
+    float: left;
+}
+
+nav a{
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+    color: #fff;
+}
+
+
+.divider{
+    border-bottom: solid 1px #ccc;
+    border-top: solid 1px #ccc;
+    margin: 30px;
+    text-align: center;
+    height: 2px;
+
+}
+
+.section-heading{
+    display: inline-block;
+    position: relative;
+    top: -35px;
+    padding: 0 10px;
+    background: #fff;
+}
+
+/* End Base Styles */

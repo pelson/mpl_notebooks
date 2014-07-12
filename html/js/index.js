@@ -9,16 +9,20 @@ $(document).ready(function() {
     $(".tag").click(function() {
         if($(this).hasClass("selected")){
             $(this).removeClass('selected');
+            updateSelected();
         }
         else{
             $(this).addClass('selected');
+            selected.push($(this).text());
+
         }
+        console.log(selected);
     });
 
     $("#clear").click(function() {
       selected = [];
 
-      $(".tag").each(function(){
+      $(".tag.selected").each(function(){
         tagOff($(this));
       });
 
@@ -26,6 +30,13 @@ $(document).ready(function() {
 
     function tagOff(tag){
       tag.removeClass('selected');
+    }
+
+    function updateSelected(){
+      selected = [];
+      $(".tag.selected").each(function() {
+        selected.push($(this).text());
+      });
     }
 
 });
