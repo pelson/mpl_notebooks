@@ -39,6 +39,19 @@ $(document).ready(function() {
       });
     }
 
+    function updateTags(){
+      $(".notebooks").each(function() {
+        $(".notebook").each(function() {
+          var nb = $(this);
+          selected.forEach(function() {
+
+            
+
+          });
+        });
+      });
+    }
+
 });
 
 $(window).load(function() {
