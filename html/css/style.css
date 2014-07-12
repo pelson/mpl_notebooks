@@ -46,6 +46,20 @@ nav a{
     margin-bottom: 0;
 }
 
+.clear{
+    color: #3498db;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.clear:hover{
+    text-decoration: underline;
+}
+
+.clear:active{
+    color: #2980b9;
+}
+
 
 
 .tags{
@@ -106,7 +120,7 @@ nav a{
     text-decoration: none;
 
     /*border-radius: 0 0 5px 5px;*/
-    opacity: 0.8;
+    opacity: 1;
     -webkit-transition: opacity .2s;
     -o-transition: opacity .2s;
     transition: opacity .2s;
@@ -123,15 +137,9 @@ nav a{
     opacity: 1;
 }
 
-.notebook p{
-    /*text-decoration: none;*/
+.info-wrap{
     color: #fff;
     background: #61a7d6;
-    /*background: #34495e;*/
-    line-height: 40px;
-    /*height: 40px;*/
-    margin: 0;
-    /*border-radius: 0 0 5px 5px;*/
 
     font-size: 18px;
     font-weight: bold;
@@ -139,8 +147,56 @@ nav a{
     -webkit-transition: background-color .2s;
     -o-transition: background-color .2s;
     transition: background-color .2s;
+    padding: 5px;
+
+    text-align: left;
+
 }
 
-.notebook:hover p{
+p.name{
+    padding: 0;
+    margin: 0;
+}
+
+.name a{
+    display: inline;
+}
+
+p.keywords{
+    text-align: left;
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.keywords a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.keywords a:hover{
+    text-decoration: underline;
+}
+
+.notebook:hover .info-wrap{
     background-color: #2d7bae;
+}
+
+.divider{
+    border-bottom: solid 1px #ccc;
+    border-top: solid 1px #ccc;
+    margin: 30px;
+    text-align: center;
+    height: 2px;
+
+}
+
+.section-heading{
+    display: inline-block;
+    position: relative;
+    top: -35px;
+    padding: 0 10px;
+    background: #fff;
 }

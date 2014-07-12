@@ -4,6 +4,8 @@ $(document).ready(function() {
   //   $(this).height(Math.random() * 300+250);
   // });
 
+    var selected = [];
+
     $(".tag").click(function() {
         if($(this).hasClass("selected")){
             $(this).removeClass('selected');
@@ -13,17 +15,28 @@ $(document).ready(function() {
         }
     });
 
+    $("#clear").click(function() {
+      selected = [];
 
+      $(".tag").each(function(){
+        tagOff($(this));
+      });
+
+    });
+
+    function tagOff(tag){
+      tag.removeClass('selected');
+    }
 
 });
 
 $(window).load(function() {
-  
-    var container = document.querySelector('.notebooks');
-    var msnry = new Masonry( container, {
-      // options
-      itemSelector: '.notebook',
-      isFitWidth: true
-    });
+
+  var nb = $(".notebooks");
+  nb.masonry({
+    // options
+    itemSelector: '.notebook',
+    isFitWidth: true
+  });
 
 });
