@@ -201,3 +201,11 @@ p.keywords{
     padding: 0 10px;
     background: #fff;
 }
+
+.hide{
+    display: none;
+}
+
+.visuallyhidden{
+    opacity: 0;
+}

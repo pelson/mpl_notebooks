@@ -13,10 +13,12 @@ $(document).ready(function() {
         }
         else{
             $(this).addClass('selected');
-            selected.push($(this).text());
+            selected.push($(this).text().toLowerCase());
 
         }
         console.log(selected);
+
+        updateTags();
     });
 
     $("#clear").click(function() {
@@ -27,6 +29,8 @@ $(document).ready(function() {
       });
 
     });
+  
+
 
     function tagOff(tag){
       tag.removeClass('selected');
@@ -35,20 +39,59 @@ $(document).ready(function() {
     function updateSelected(){
       selected = [];
       $(".tag.selected").each(function() {
-        selected.push($(this).text());
+        selected.push($(this).text().toLowerCase());
       });
+    }
+
+
+    function arraysOverlap(a, b){
+      for (var i = 0; i < a.length; i++) {
+        for (var j = 0; j < b.length; j++) {
+          if(a[i] === b[j]){
+            return true;
+          }
+        }
+      }
+      return false;
     }
 
     function updateTags(){
       $(".notebooks").each(function() {
+        var wrapper = $(this);
         $(".notebook").each(function() {
           var nb = $(this);
-          selected.forEach(function() {
+          var nbtags = nb.data("keywords");
 
-            
+          var visible = true;
 
-          });
+          for (var i = 0; i < selected.length; i++) {
+            var sel = selected[i];
+            var nbHasTag = false;
+            for (var j = 0; j < nbtags.length; j++) {
+              if(sel === nbtags[j]){
+                nbHasTag = true;
+              }
+            }
+            if(!nbHasTag){
+              visible = false;
+              i = selected.length;
+            }
+          }
+
+          if(selected.length === 0 || visible){
+            nb.removeClass("hide");
+            wrapper.masonry('layout');
+          }
+          else if(!visible){
+            nb.addClass("hide");
+            wrapper.masonry('layout');
+
+          }
         });
+        if(wrapper.children(":not(.hide)").length === 0){
+          // console.log("nothing");
+          wrapper.prev().hide();
+        }
       });
     }
 
