@@ -1,0 +1,65 @@
+html, body, .gallery{
+    height: 100%;
+}
+
+nav{
+    height: 60px;
+    background: #2980b9;
+    position: fixed;    
+    width: 100%;
+    z-index: 1;
+}
+
+nav>p{
+    margin: 0;
+    text-align: center;
+    color: white;
+    line-height: 60px
+}
+
+.filter{
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.filter p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.tags{
+    max-width: 960px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.tag{
+    padding: 10px;
+    margin: 10px;
+    background: #f0f0f0;
+    display: inline-block;
+
+    text-decoration: none;
+    color: #3498db;
+    border-radius: 5px;
+}
+
+.gallery{
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+}
+
+.notebooks{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.notebook{
+    width: 350px;
+    margin: 5px;
+    height: 350px;
+    background: #f0f0f0;
+}
