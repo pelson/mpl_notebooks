@@ -40,7 +40,7 @@ nav a{
     margin-top: 0;
 }
 
-.filter p.title{
+.filter .title{
     text-align: center;
     font-size: 30px;
     margin-bottom: 0;
@@ -106,13 +106,21 @@ nav a{
     text-decoration: none;
 
     /*border-radius: 0 0 5px 5px;*/
+    opacity: 0.8;
+    -webkit-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    transition: opacity .2s;
 
 }
 
 .notebook img{
     width: 330px;
-    display: block;
     padding: 10px;
+    display: block;
+}
+
+.notebook:hover{
+    opacity: 1;
 }
 
 .notebook p{
@@ -127,4 +135,12 @@ nav a{
 
     font-size: 18px;
     font-weight: bold;
+
+    -webkit-transition: background-color .2s;
+    -o-transition: background-color .2s;
+    transition: background-color .2s;
+}
+
+.notebook:hover p{
+    background-color: #2d7bae;
 }
