@@ -19,7 +19,12 @@
 {% for section in sections %}
     {{ section.name|e }}
     {% for example in section.examples %}
-        <li><a href="{{ example.url }}">{{ example.name|e }}</a></li>
+        <li><a href="{{ example.url }}">{{ example.name|e }}</a>
+        
+        {% for output in example.outputs %}
+            <img src="{{ output }}" width="300">
+        {% endfor %}
+        </li>
     {% endfor %}
     <br>
 {% endfor %}
