@@ -1,3 +1,7 @@
+"""
+The old rst generator.
+"""
+
 import os
 from IPython.nbformat import current as nbformat
 import itertools
