@@ -1,20 +1,31 @@
 html, body, .gallery{
     height: 100%;
+    font-family: "Vollkorn";
 }
 
 nav{
     height: 60px;
-    background: #2980b9;
+    background: #3498db;
     position: fixed;    
     width: 100%;
     z-index: 1;
 }
 
-nav>p{
+nav p{
     margin: 0;
-    text-align: center;
+    text-align: left;
     color: white;
-    line-height: 60px
+    font-size: 23px;
+    line-height: 60px;
+    padding-left: 20px;
+    float: left;
+}
+
+nav a{
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+    color: #fff;
 }
 
 .filter{
@@ -25,9 +36,17 @@ nav>p{
 
 .filter p{
     text-align: center;
-    font-weight: bold;
-    font-size: 1.5em;
+    color: #333;
+    margin-top: 0;
 }
+
+.filter p.title{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+
 
 .tags{
     max-width: 960px;
@@ -36,30 +55,76 @@ nav>p{
 }
 
 .tag{
-    padding: 10px;
-    margin: 10px;
+    padding: 7px 12px;
+    margin: 7px 10px;
     background: #f0f0f0;
     display: inline-block;
-
     text-decoration: none;
     color: #3498db;
-    border-radius: 5px;
+    color: #aaa;
+    border-radius: 3px;
+
+    font-size: 15px;
+}
+
+.tag:hover{
+    background: #f7f7f7;
+}
+
+.tag:active, .tag:focus{
+    box-shadow: 0 2px 3px 0 #aaa inset;
+    outline: none;
+}
+
+.tag.selected:active, .tag.selected:focus{
+    box-shadow: 0 2px 3px 0 #000 inset;
+    outline: none;
+}
+
+.tag.selected{
+    background: #34495e;
+    color: #ffffff;
 }
 
 .gallery{
     padding-top: 60px;
-    padding-bottom: 60px;
 
 }
 
 .notebooks{
     text-align: center;
+    width: 100%;
     margin: 0 auto;
 }
 
 .notebook{
     width: 350px;
-    margin: 5px;
-    height: 350px;
+    margin: 15px;
+    /*height: 350px;*/
     background: #f0f0f0;
+    /*border: solid 1px #ccc;*/
+    text-decoration: none;
+
+    /*border-radius: 0 0 5px 5px;*/
+
+}
+
+.notebook img{
+    width: 330px;
+    display: block;
+    padding: 10px;
+}
+
+.notebook p{
+    /*text-decoration: none;*/
+    color: #fff;
+    background: #61a7d6;
+    /*background: #34495e;*/
+    line-height: 40px;
+    /*height: 40px;*/
+    margin: 0;
+    /*border-radius: 0 0 5px 5px;*/
+
+    font-size: 18px;
+    font-weight: bold;
 }

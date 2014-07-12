@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".tag").click(function(){$(this).hasClass("selected")?$(this).removeClass("selected"):$(this).addClass("selected")})}),$(window).load(function(){var e=document.querySelector(".notebooks"),t=new Masonry(e,{itemSelector:".notebook",isFitWidth:!0})});
