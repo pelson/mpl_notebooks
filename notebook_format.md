@@ -24,5 +24,6 @@ Add the original title and keywords from the original example in the format show
   "keywords": [
     "colors",
     "colormaps"
+  ]
 }
 ```
