@@ -17,19 +17,9 @@ def read_notebook(fname):
         return notebook
 
 
-def notebooks_by_keyword(notebook_fnames):
-    result = {}
-    for notebook_fname in notebook_fnames:
-        notebook = read_notebook(notebook_fname)
-        for keyword in notebook['metadata'].get('keywords', []):
-            result.setdefault(keyword, []).append(notebook_fname)
-    return result
-
-
 def convert_to_html(notebook, resources, target_directory):
     """Return a list of strings representing the rst of the given notebook."""
     exporter = HTMLExporter(template_file='gallery_page', template_path=[os.path.dirname(__file__)])
-    print exporter.template_file
     rst, resources = exporter.from_notebook_node(notebook, resources)
     rst = rst.split('\n')
 
@@ -63,16 +53,32 @@ def notebook_html(notebook_fname, refname, target_directory):
 def build_gallery(examples_directory, target_directory):
     notebook_fnames = list(notebooks_in_directory(examples_directory))
     
-    # TODO use a jinja template.
-    template = """ * {refname}<br>\n"""
-    
-    gallery_content = ['<html><body>']
-
     examples_directory = os.path.join(target_directory, 'gallery')
     if not os.path.isdir(examples_directory):
         os.makedirs(examples_directory)
 
     gallery_page_fname = os.path.join(target_directory, 'gallery.html')
+
+    exporter = HTMLExporter(template_file='gallery', template_path=[os.path.dirname(__file__)])
+    exporter._load_template()
+    exporter = exporter.template
+
+    sections = []
+
+    notebook_keywords = {}
+    for notebook_fname in notebook_fnames:
+        notebook = read_notebook(notebook_fname)
+        notebook_keywords[notebook_fname] = notebook['metadata'].get('keywords', [])
+
+    notebooks_by_keyword = {}
+    for notebook_fname, keywords in notebook_keywords.items():
+        for keyword in keywords:
+            notebooks_by_keyword.setdefault(keyword, []).append(notebook_fname)
+
+    import collections
+    Section = collections.namedtuple('Section', ['name', 'examples'])
+    Example = collections.namedtuple('Example', ['name', 'url', 'keywords'])
+
 
     for fname in notebook_fnames:
         name = os.path.splitext(os.path.basename(fname))[0]
@@ -81,17 +87,15 @@ def build_gallery(examples_directory, target_directory):
         with open(page_content_fname, 'w') as fh:
             fh.write(notebook_html(fname, refname, examples_directory).encode('utf-8'))
 
-    for keyword, fnames in notebooks_by_keyword(notebook_fnames).items():
-        gallery_content.append('\n\n<br><br>Section: {}<br>\n{}<br><br><br>\n\n'.format(keyword, '-' * (len(keyword) + 10)))
+
+    for keyword, fnames in notebooks_by_keyword.items():
+        section = Section(keyword, [])
+        sections.append(section)
         for fname in fnames:
             name = os.path.splitext(os.path.basename(fname))[0]
-            page_content_fname = os.path.join(examples_directory, name + '.html')
-            refname = '<a href="gallery/{}.html">{}</a>'.format(name, name)
-            
-            gallery_content.append(template.format(refname=refname, content=os.path.basename(fname)))
-
-    gallery_content.extend(['</body>', '</html>'])
+            example = Example(name, 'gallery/{}.html'.format(name), notebook_keywords[fname])
+            section.examples.append(example)
 
     with open(gallery_page_fname, 'w') as gallery_page:
-        gallery_page.writelines(gallery_content)
+        gallery_page.write(exporter.render(title='foobar', sections=sections))
 
